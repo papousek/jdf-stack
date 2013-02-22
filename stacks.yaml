@@ -961,6 +961,41 @@ availableRuntimes:
         runtime-type: EAP
    }
    
+   ###############
+   #   E A P 6.1 #
+   ###############
+
+ - &jbosseap610runtime
+   id: jbosseap610runtime
+   name: JBoss EAP 6.1.0
+   version: 6.1.0
+   url: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=12673&product=appplatform&version=&downloadType=distributions
+   boms:
+    - *jboss-javaee-6_0-300redhat1
+    - *jboss-javaee-6_0-with-errai-102-redhat1
+    - *jboss-javaee-6_0-with-hibernate-102-redhat1
+    - *jboss-javaee-6_0-with-hibernate3-102-redhat1
+    - *jboss-javaee-6_0-with-logging-102-redhat1
+    - *jboss-javaee-6_0-with-osgi-102-redhat1
+    - *jboss-javaee-6_0-with-richfaces-wfk-101-redhat1
+    - *jboss-javaee-6_0-with-security-102-redhat1
+    - *jboss-javaee-6_0-with-tools-102-redhat1
+    - *jboss-javaee-6_0-with-transactions-102-redhat1
+   defaultBom: *jboss-javaee-6_0-300redhat1
+   defaultArchetype: *jboss-javaee6-webapp-archetype-712
+   archetypes:
+    - *jboss-javaee6-webapp-archetype-712
+    - *jboss-javaee6-webapp-blank-archetype-712
+    - *jboss-javaee6-webapp-ear-archetype-712
+    - *jboss-javaee6-webapp-ear-blank-archetype-712
+    - *jboss-html5-mobile-archetype-100m8
+    - *richfaces-archetype-kitchensink-423final2
+    - *jboss-errai-kitchensink-archetype-211final
+   labels: {
+        runtime-category: SERVER,
+        runtime-type: EAP
+   }
+
 
    ###############
    #   A S 7.1   #
@@ -1119,6 +1154,11 @@ minorReleases:
    #   E A P  6.X   #
    ##################
    
+ - &jbeap61
+   name: JBoss EAP
+   version: 6.1
+   recommendedRuntime: *jbosseap610runtime
+
  - &jbeap60
    name: JBoss EAP
    version: 6.0
@@ -1160,6 +1200,7 @@ majorReleases:
    
  - name: JBoss EAP
    version: 6
-   recommendedRuntime: *jbosseap601runtime
+   recommendedRuntime: *jbosseap610runtime
    minorReleases:
     - *jbeap60
+    - *jbeap61
