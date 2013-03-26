@@ -844,7 +844,7 @@ availableArchetypes:
    description: RichFaces Kitchen Sink Application
    groupId: org.richfaces.archetypes
    artifactId: richfaces-archetype-kitchensink
-   recommendedVersion: 4.2.3.Final-2
+   recommendedVersion: 4.3.1.Final-1
    repositoryURL: 
 
    ############################
